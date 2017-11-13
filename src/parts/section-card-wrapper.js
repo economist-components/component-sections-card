@@ -1,38 +1,40 @@
 import React from 'react';
-import List from './section-card-list.js';
 
 export default function SectionsCardWrapper(props) {
-  let content = [];
-  let joinContent = [];
+  const content = [];
   const { children, className } = props;
   const prefix = className ? `${ className }` : 'sections-card';
   React.Children.forEach(children, (child, key) => {
-    if (child.type === List) {
-      const contentSwitch =
-        (<List
-          key={key}
-          topic={child.props.topic}
-          links={child.props.links}
-          title={child.props.title}
-          prefix={prefix}
-         />);
-      if (child.props.wrapColumns) {
-        joinContent.push(contentSwitch);
-      } else {
-        content.push(contentSwitch);
-      }
+    const orderProp = child.props.order;
+    const childOrder = isNaN(orderProp) ? key : orderProp;
+    const renderedChild = (
+      <child.type
+        key={key}
+        prefix={prefix}
+        {...child.props}
+      />
+    );
+    if (content[childOrder]) {
+      content[childOrder] = content[childOrder].concat([ renderedChild ]);
+    } else {
+      content[childOrder] = [ renderedChild ];
     }
+  });
+  const renderableContent = content.map((arrayGroup) => {
+    if (arrayGroup.length > 1) {
+      return (
+        <div className={`${ prefix }__list ${ prefix }__list-wrapper--column-wrap`}>
+          {arrayGroup}
+        </div>
+      );
+    }
+    return arrayGroup[0];
   });
   return (
     <nav role="nav" className={`${ prefix }`}>
       <div className={`${ prefix }__wrapper`}>
         <div className={`${ prefix }__menu`}>
-          {joinContent[0] ?
-            <div className={`${ prefix }__list ${ prefix }__list-wrapper--column-wrap`}>
-              {joinContent}
-            </div> :
-          null}
-          {content}
+          {renderableContent}
         </div>
       </div>
     </nav>

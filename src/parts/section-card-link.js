@@ -1,10 +1,13 @@
 import Button from '@economist/component-link-button';
 import React from 'react';
 
-export default function SectionCardLink({ buttonClassName, title, buttonProps, prefix }) {
+export default function SectionCardLink({ buttonClassName, linkClassName, title, buttonProps, prefix }) {
   const { internal, ...cleanedButtonProps } = buttonProps; // eslint-disable-line no-unused-vars
+  const customLinkClassName = linkClassName ?
+  `${ prefix }__list-item ${ prefix }__list-item--${ linkClassName }` :
+  `${ prefix }__list-item`;
   return (
-    <li className={`${ prefix }__list-item`}>
+    <li className={customLinkClassName}>
       <Button
         {...cleanedButtonProps}
         className={buttonClassName}
@@ -18,6 +21,7 @@ export default function SectionCardLink({ buttonClassName, title, buttonProps, p
 if (process.env.NODE_ENV !== 'production') {
   SectionCardLink.propTypes = {
     buttonClassName: React.PropTypes.string,
+    linkClassName: React.PropTypes.string,
     buttonProps: React.PropTypes.shape({
       target: React.PropTypes.string,
       unstyled: React.PropTypes.bool,
