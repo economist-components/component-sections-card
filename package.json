@@ -113,16 +113,16 @@
     ]
   },
   "dependencies": {
-    "@economist/component-icon": "^5.11.1",
-    "@economist/component-link-button": "^3.0.3",
+    "@economist/component-icon": "^5.17.0",
+    "@economist/component-link-button": "^3.1.0",
     "react": "^0.14.8||^15.0.0||^16.0.0"
   },
   "devDependencies": {
-    "@economist/component-grid": "^1.2.2",
-    "@economist/component-palette": "^1.0.1",
-    "@economist/component-typography": "^3.1.1",
-    "@economist/doc-pack": "^1.0.7",
-    "@economist/provision-react-component": "3.0.3",
+    "@economist/component-grid": "^1.4.0",
+    "@economist/component-palette": "^1.11.0",
+    "@economist/component-typography": "^3.5.0",
+    "@economist/doc-pack": "^1.0.8",
+    "@economist/provision-react-component": "3.1.0",
     "babel-cli": "^6.6.5",
     "babel-core": "^6.7.5",
     "babel-eslint": "^6.0.1",
