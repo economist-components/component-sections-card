@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SectionCardLink from './section-card-link';
 
 export default function SectionCardLinks({ links, prefix }) {
@@ -34,12 +35,12 @@ export default function SectionCardLinks({ links, prefix }) {
 
 if (process.env.NODE_ENV !== 'production') {
   SectionCardLinks.propTypes = {
-    links: React.PropTypes.arrayOf(
-      React.PropTypes.shape({
-        href: React.PropTypes.string.isRequired,
-        title: React.PropTypes.string.isRequired,
+    links: PropTypes.arrayOf(
+      PropTypes.shape({
+        href: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
       })
     ).isRequired,
-    prefix: React.PropTypes.string,
+    prefix: PropTypes.string,
   };
 }
