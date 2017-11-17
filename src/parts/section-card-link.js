@@ -1,5 +1,6 @@
-import Button from '@economist/component-link-button';
 import React from 'react';
+import PropTypes from 'prop-types';
+import Button from '@economist/component-link-button';
 
 export default function SectionCardLink({ buttonClassName, linkClassName, title, buttonProps, prefix }) {
   const { internal, ...cleanedButtonProps } = buttonProps; // eslint-disable-line no-unused-vars
@@ -20,15 +21,15 @@ export default function SectionCardLink({ buttonClassName, linkClassName, title,
 
 if (process.env.NODE_ENV !== 'production') {
   SectionCardLink.propTypes = {
-    buttonClassName: React.PropTypes.string,
-    linkClassName: React.PropTypes.string,
-    buttonProps: React.PropTypes.shape({
-      target: React.PropTypes.string,
-      unstyled: React.PropTypes.bool,
-      href: React.PropTypes.string,
-      title: React.PropTypes.string,
+    buttonClassName: PropTypes.string,
+    linkClassName: PropTypes.string,
+    buttonProps: PropTypes.shape({
+      target: PropTypes.string,
+      unstyled: PropTypes.bool,
+      href: PropTypes.string,
+      title: PropTypes.string,
     }),
-    title: React.PropTypes.string,
-    prefix: React.PropTypes.string,
+    title: PropTypes.string,
+    prefix: PropTypes.string,
   };
 }

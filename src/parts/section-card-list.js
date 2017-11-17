@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SectionCardLinks from './section-card-links';
 import SectionCardTitle from './section-card-title';
 
@@ -29,15 +30,15 @@ export default function SectionCardList({ title, links, topic, prefix }) {
 
 if (process.env.NODE_ENV !== 'production') {
   SectionCardList.propTypes = {
-    title: React.PropTypes.string,
-    links: React.PropTypes.arrayOf(
-      React.PropTypes.shape({
-        href: React.PropTypes.string.isRequired,
-        title: React.PropTypes.string.isRequired,
+    title: PropTypes.string,
+    links: PropTypes.arrayOf(
+      PropTypes.shape({
+        href: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
       })
     ).isRequired,
-    topic: React.PropTypes.string,
-    className: React.PropTypes.string,
-    prefix: React.PropTypes.string,
+    topic: PropTypes.string,
+    className: PropTypes.string,
+    prefix: PropTypes.string,
   };
 }

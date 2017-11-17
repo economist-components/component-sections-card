@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function SectionCardTitle({ title, prefix }) {
   return (
@@ -10,7 +11,7 @@ export default function SectionCardTitle({ title, prefix }) {
 
 if (process.env.NODE_ENV !== 'production') {
   SectionCardTitle.propTypes = {
-    title: React.PropTypes.string,
-    prefix: React.PropTypes.string,
+    title: PropTypes.string,
+    prefix: PropTypes.string,
   };
 }
