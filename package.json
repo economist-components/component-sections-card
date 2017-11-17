@@ -115,7 +115,7 @@
   "dependencies": {
     "@economist/component-icon": "^5.11.1",
     "@economist/component-link-button": "^3.0.3",
-    "react": "^0.14.8||^15.0.0"
+    "react": "^0.14.8||^15.0.0||^16.0.0"
   },
   "devDependencies": {
     "@economist/component-grid": "^1.2.2",
@@ -135,10 +135,7 @@
     "browserify": "^13.0.0",
     "browserify-istanbul": "^2.0.0",
     "chai": "^3.5.0",
-    "chai-enzyme": "^0.4.2",
-    "chai-spies": "^0.7.1",
     "coveralls": "^2.11.9",
-    "enzyme": "^2.2.0",
     "eslint": "^2.8.0",
     "eslint-config-strict": "^8.5.1",
     "eslint-config-strict-react": "^8.0.1",
@@ -167,8 +164,7 @@
     "postcss-import": "^8.1.0",
     "postcss-reporter": "^1.3.3",
     "postcss-url": "^5.1.1",
-    "react-addons-test-utils": "^0.14.8||^15.0.0",
-    "react-dom": "^0.14.8||^15.0.0",
+    "react-dom": "^0.14.0 || ^15.0.0-0 || ^16.0.0-0",
     "semantic-release": "^4.3.5",
     "sinon": "^1.17.1",
     "stylelint": "^6.5.1",
