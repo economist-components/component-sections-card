@@ -21,10 +21,13 @@ export default function SectionsCardWrapper(props) {
       content[childOrder] = [ renderedChild ];
     }
   });
-  const renderableContent = content.map((arrayGroup) => {
+  const renderableContent = content.map((arrayGroup, i) => {
     if (arrayGroup.length > 1) {
       return (
-        <div className={`${ prefix }__list ${ prefix }__list-wrapper--column-wrap`}>
+        // i in this case is the same as childOrder (see above) and so seems good enough for the key.
+        // However, because we're mixing raw children with groups, the keys might repeat.
+        // Therefore we need to distinguish them somehow, that's where `column_${i}` comes from.
+        <div key={`column_${ i }`} className={`${ prefix }__list ${ prefix }__list-wrapper--column-wrap`}>
           {arrayGroup}
         </div>
       );
