@@ -28,7 +28,10 @@ if (process.env.NODE_ENV !== 'production') {
       href: PropTypes.string,
       title: PropTypes.string,
     }),
-    title: PropTypes.string,
+    title: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.element,
+    ]),
     prefix: PropTypes.string,
   };
 }
